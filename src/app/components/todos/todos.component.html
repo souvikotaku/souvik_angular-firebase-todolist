@@ -1,0 +1,50 @@
+<div class="todos">
+    <div class="formdiv" style="width:100%;display:flex;justify-content:center">
+        <form (submit)="addTodo()" class="todoform">
+            <h1 style="text-align:center">To-do List</h1>
+            <input type="text" name="inputTodo" placeholder="Enter Todo.." class="todo-input form-control" style="margin-bottom:10px" [(ngModel)]="inputTodo"  />
+            <input type="submit" value="Add Todo"  class="todo-submit btn btn-success btn-block" style="margin-bottom:10px" />
+        </form>
+    </div>
+    
+
+    <!-- <div  *ngFor="let todo of todos; let i = index" class="todo {{(todo.completed ? 'done' : '')}}">
+        <div class="id">{{i+1}}</div>
+        <div class="content" >{{todo.content}}</div>
+        <input type="checkbox" class="doneToggle" (click)="toggleDone(i)" >
+        <button class="delete" (click)="deleteTodo(i)">Remove</button>
+    </div> -->
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Sr.No</th>
+            <th scope="col">Todos</th>
+            <th scope="col">Completed</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let todo of todos; let i = index" class="todo {{(todo.completed ? 'done' : '')}}">
+
+          <tr>
+            <th scope="row">{{i+1}}</th>
+            <td class="content">{{todo.content}}</td>
+            <td><input type="checkbox" class="doneToggle" (click)="toggleDone(i)" ></td>
+            <td><button class="delete btn btn-danger" (click)="deleteTodo(i)">Remove</button></td>
+          </tr>
+          <!-- <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr> -->
+        </tbody>
+      </table>
+      <br/>
+            <h3 style="text-align: center">made by Souvik Das</h3>
+    
+</div>

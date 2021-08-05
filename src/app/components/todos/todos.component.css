@@ -1,0 +1,15 @@
+.todo.done .content {
+  text-decoration: line-through;
+}
+
+@media (orientation: portrait) {
+  .todoform {
+    width: 90%;
+  }
+}
+
+@media (orientation: landscape) {
+  .todoform {
+    width: 30%;
+  }
+}
